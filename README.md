@@ -28,6 +28,7 @@ For this exercise, you're going to be fixing already written test cases.
 ## CircleCI Set Up
 
 1. Set your origin to the new site: `git remote set-url origin git+ssh://git@github.com/<username>/lect13.git`  
+1.5. Make a new github repository called lect13
 2. `git commit -am "Fix unit tests"`  
 3. `git status` should be empty  
 3. `git push origin master`  
