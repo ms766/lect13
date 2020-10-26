@@ -14,7 +14,7 @@ jobs:
       - run:
           command: python ./chatbot_test.py
           name: Chatbot Test
-     - run:
+      - run:
           command: python ./split_test.py
           name: Python's Split Libarary Test
           
