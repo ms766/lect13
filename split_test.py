@@ -90,6 +90,3 @@ class SplitTestCase(unittest.TestCase):
             self.assertNotEqual(len(inp), expected[KEY_LENGTH])
             self.assertNotEqual(inp[0], expected[KEY_FIRST_WORD])
 
-
-if __name__ == '__main__':
-    unittest.main()

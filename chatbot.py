@@ -13,6 +13,7 @@ def parse_message(message):
         }
             
     message_components = message.split(" ", 1)
+    
     if len(message_components) == 1:
         possible_bot_cmd, rest_of_message = message_components[0], ""
     else:

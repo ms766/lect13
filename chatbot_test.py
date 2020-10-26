@@ -26,18 +26,32 @@ class ChatbotTestCase(unittest.TestCase):
                 }
             },
             {
-                KEY_INPUT: "!about me",
+                KEY_INPUT: "!!about me",
                 KEY_EXPECTED: {
-                    KEY_IS_BOT: False,
-                    KEY_BOT_COMMAND: None,
-                    KEY_MESSAGE: "!about me",
+                    KEY_IS_BOT: True,
+                    KEY_BOT_COMMAND: "about",
+                    KEY_MESSAGE: "me",
                 }
             },
-            # TODO HW13 - add another
+            {
+                KEY_INPUT: "!!joke one",
+                KEY_EXPECTED: {
+                    KEY_IS_BOT: True,
+                    KEY_BOT_COMMAND: "joke",
+                    KEY_MESSAGE: "one",
+                }
+            }
         ]
         
         self.failure_test_params = [
-            # TODO HW13
+            {
+                KEY_INPUT: "!joke",
+                KEY_EXPECTED: {
+                    KEY_IS_BOT: True,
+                    KEY_BOT_COMMAND: "joke",
+                    KEY_MESSAGE: "une",
+                }
+            }
         ]
 
 
@@ -56,8 +70,10 @@ class ChatbotTestCase(unittest.TestCase):
             response = chatbot.parse_message(test[KEY_INPUT])
             expected = test[KEY_EXPECTED]
             
-            # TODO add assertNotEqual cases here instead
-            self.assertEqual(True, False)
+            
+            self.assertNotEqual(response[KEY_IS_BOT], expected[KEY_IS_BOT])
+            self.assertNotEqual(response[KEY_BOT_COMMAND],expected[KEY_BOT_COMMAND])
+            self.assertNotEqual(response[KEY_MESSAGE], expected[KEY_MESSAGE])
 
-if __name__ == '__main__':
-    unittest.main()
+# if __name__ == '__main__':
+#     unittest.main()
